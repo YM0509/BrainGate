@@ -43,14 +43,20 @@ public class AppsDrawer extends AppCompatActivity {
         appsRecyclerView.setAdapter(new AppsAdapter());
     }
 
+    /**
+     * Retrieves a list of all launchable applications installed on the device.
+     * This method queries the PackageManager for activities that can be launched
+     * from the main launcher screen. The results are stored in the
+     * {@code installedApps} list.
+     */
     private void loadInstalledApps() {
         PackageManager pm = getPackageManager();
         installedApps = new ArrayList<>();
         Intent intent = new Intent(Intent.ACTION_MAIN, null);
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
         List<ResolveInfo> allApps = pm.queryIntentActivities(intent, 0);
-        for (ResolveInfo ri : allApps) {
-            installedApps.add(ri);
+        if (allApps != null) {
+            installedApps.addAll(allApps);
         }
     }
 
@@ -92,7 +98,16 @@ public class AppsDrawer extends AppCompatActivity {
                 int pos = getAdapterPosition();
                 ResolveInfo appInfo = installedApps.get(pos);
                 Intent launchIntent = getPackageManager().getLaunchIntentForPackage(appInfo.activityInfo.packageName);
-                startActivity(launchIntent);
+                String s=appInfo.loadLabel(getPackageManager()).toString();
+                if("WhatsApp".equals(s)||"YouTube".equals(s))
+                {
+                    com.example.braingate.MyApplication myApp = (com.example.braingate.MyApplication) getApplication();
+                    myApp.setGlobalString(appInfo.activityInfo.packageName);
+                    Intent intent = new Intent(AppsDrawer.this, Quiz.class);
+                    startActivity(intent);
+                }
+                else
+                    startActivity(launchIntent);
             }
         }
     }
