@@ -1,0 +1,53 @@
+<!-- res/xml/root_preferences.xml -->
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:title="Academics"
+        app:iconSpaceReserved="true">
+
+        <DropDownPreference
+            app:key="course"
+            app:title="Course of Study"
+            app:summary="Select your primary curriculum or field of study."
+            app:entries="@array/course_entries"
+            app:entryValues="@array/course_values"
+            app:defaultValue="cbse"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@android:drawable/ic_menu_edit" />
+
+        <DropDownPreference
+            app:key="subjects"
+            app:title="Key Subjects"
+            app:summary="Select the subject for the quiz."
+            app:entries="@array/subject_entries"
+            app:entryValues="@array/subject_values"
+            app:defaultValue="general_knowledge"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@android:drawable/ic_menu_edit" />
+
+        <EditTextPreference
+            app:key="topics"
+            app:title="Topics for today"
+            app:summary="List your topics for the quiz, separated by commas."
+            app:useSimpleSummaryProvider="true"
+            app:icon="@android:drawable/ic_menu_edit" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="Quiz Settings"
+        app:iconSpaceReserved="true">
+
+        <DropDownPreference
+            app:key="difficulty"
+            app:title="Question Difficulty"
+            app:summary="Select the desired difficulty for generated questions."
+            app:entries="@array/difficulty_entries"
+            app:entryValues="@array/difficulty_values"
+            app:defaultValue="medium"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@android:drawable/ic_menu_sort_by_size" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

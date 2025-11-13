@@ -1,0 +1,52 @@
+<resources>
+    <!-- Difficulty Levels -->
+    <string-array name="difficulty_entries">
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
+
+    <string-array name="difficulty_values">
+        <item>easy</item>
+        <item>medium</item>
+        <item>hard</item>
+    </string-array>
+
+    <!-- Course Options -->
+    <string-array name="course_entries">
+        <item>ICSE/ISC</item>
+        <item>CBSE</item>
+        <item>JEE</item>
+        <item>NEET</item>
+    </string-array>
+
+    <string-array name="course_values">
+        <item>icse_isc</item>
+        <item>cbse</item>
+        <item>jee</item>
+        <item>neet</item>
+    </string-array>
+
+    <!-- Subject Options -->
+    <string-array name="subject_entries">
+        <item>Maths</item>
+        <item>Chemistry</item>
+        <item>Physics</item>
+        <item>Biology</item>
+        <item>History &amp; Civics</item>
+        <item>Geography</item>
+        <item>Current Affairs</item>
+        <item>General Knowledge</item>
+    </string-array>
+
+    <string-array name="subject_values">
+        <item>maths</item>
+        <item>chemistry</item>
+        <item>physics</item>
+        <item>biology</item>
+        <item>history_civics</item>
+        <item>geography</item>
+        <item>current_affairs</item>
+        <item>general_knowledge</item>
+    </string-array>
+</resources>

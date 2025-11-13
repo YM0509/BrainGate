@@ -16,7 +16,7 @@
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="?android:attr/textColorPrimary"
+        android:textColor="@android:color/white"
         android:textSize="18sp" />
 
 </LinearLayout>

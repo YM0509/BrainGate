@@ -9,13 +9,21 @@
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <!-- Set the window background to your image -->
+        <item name="android:windowBackground">@drawable/app_background</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <!-- Remove attributes that conflict with a static background -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowShowWallpaper">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- Custom theme for the Settings screen -->
+    <style name="Theme.App.Settings" parent="Theme.AppCompat.DayNight">
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+    </style>
+
 </resources>

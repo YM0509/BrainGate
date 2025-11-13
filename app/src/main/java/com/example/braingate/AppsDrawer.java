@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class AppsDrawer extends AppCompatActivity {
@@ -55,20 +56,17 @@ public class AppsDrawer extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_MAIN, null);
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
         List<ResolveInfo> allApps = pm.queryIntentActivities(intent, 0);
-        if (allApps != null) {
-            installedApps.addAll(allApps);
-        }
+        installedApps.addAll(allApps);
+        Collections.sort(installedApps, new ResolveInfo.DisplayNameComparator(pm));
     }
 
     class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.ViewHolder> {
-
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = getLayoutInflater().inflate(R.layout.row, parent, false);
             return new ViewHolder(view);
         }
-
         @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
             ResolveInfo appInfo = installedApps.get(position);
@@ -76,12 +74,10 @@ public class AppsDrawer extends AppCompatActivity {
             holder.appName.setText(appInfo.loadLabel(pm));
             holder.appIcon.setImageDrawable(appInfo.loadIcon(pm));
         }
-
         @Override
         public int getItemCount() {
             return installedApps.size();
         }
-
         class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
             TextView appName;
             ImageView appIcon;
@@ -104,6 +100,11 @@ public class AppsDrawer extends AppCompatActivity {
                     com.example.braingate.MyApplication myApp = (com.example.braingate.MyApplication) getApplication();
                     myApp.setGlobalString(appInfo.activityInfo.packageName);
                     Intent intent = new Intent(AppsDrawer.this, Quiz.class);
+                    startActivity(intent);
+                }
+                else if("BrainGate".equals(s))
+                {
+                    Intent intent = new Intent(AppsDrawer.this, SettingsActivity.class);
                     startActivity(intent);
                 }
                 else

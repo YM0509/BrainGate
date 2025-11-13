@@ -8,7 +8,7 @@ public class MyApplication extends Application {
     // This is the string that will be accessible everywhere.
     private String opApp;
 
-    @Override
+   // @Override                                                                                                                                       `
     public void onCreate() {
         super.onCreate();
         // Initialize the string with a default value if needed.
