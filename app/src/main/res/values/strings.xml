@@ -21,4 +21,7 @@
     <string name="error">"Error: "</string>
     <string name="time_remaining">"Time remaining: "</string>
     <string name="Continue">Continue</string>
+    <string name="apps">Apps</string>
+    <string name="focus_music">Focus Music</string>
+    <string name="ai_help">AI Help</string>
 </resources>

@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import androidx.appcompat.app.AlertDialog;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -36,7 +39,6 @@ public class Home extends AppCompatActivity {
             finish();
             return;
         }
-
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -48,7 +50,8 @@ public class Home extends AppCompatActivity {
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         TextView quoteTextView = findViewById(R.id.quote);
         homeViewModel.getQuote().observe(this, quoteTextView::setText);
-
+        Button ai = findViewById(R.id.AIhelp);
+        ai.setOnClickListener(v -> startActivity(new Intent(Home.this, AI_Help.class)));
         TextView date = findViewById(R.id.date);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             date.setText(LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, MMM dd, yyyy")));

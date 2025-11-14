@@ -16,12 +16,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BrainGate">
-
+        <activity
+            android:name=".AI_Help"
+            android:exported="false" />
         <!-- New Music Player Activity -->
         <activity
             android:name=".MusicPlayerActivity"
             android:exported="false" />
-
         <activity
             android:name=".SettingsActivity"
             android:exported="false"

@@ -137,7 +137,7 @@ public class Quiz extends AppCompatActivity {
         String difficulty = prefs.getString("difficulty", "medium");
 
         AI ai = new AI();
-        String prompt = String.format("Generate one %s-level study-related multiple-choice style question on the topic %s of difficulty %s. For testing ask simple questions such as addition.\nOutput format must be exactly:\n<Question text>\n\nAnswer: <Correct answer>\nDo not include explanations, options, or any extra text.", difficulty, currentSubjects, difficulty);
+        String prompt = String.format("Generate one %s-level study-related question on the topic %s of difficulty %s.The question should be objective. Respond in plain text only, without any markdown, asterisks, or special formatting.No dollar sign.\nOutput format must be exactly:\n<Question text>\n\nAnswer: <Correct answer>\nDo not include explanations, options, or any extra text.", course, currentSubjects, difficulty);
         ai.generateResponse(prompt, new AI.AIResponseCallback() {
             @Override
             public void onSuccess(String response) {
