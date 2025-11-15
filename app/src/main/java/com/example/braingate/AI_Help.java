@@ -26,12 +26,19 @@ public class AI_Help extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        TextView resultText = findViewById(R.id.result);
+        Button generate = findViewById(R.id.generate);
+        generate.setOnClickListener(v ->{ resultText.setText("Generating...");
+            generate();
+        });
+
+    }
+    public void generate()
+    {
         AI ai = new AI();
         EditText input = findViewById(R.id.input);
         String prompt = input.getText().toString();
         TextView resultText = findViewById(R.id.result);
-        Button generate = findViewById(R.id.generate);
-        generate.setOnClickListener(v ->{ resultText.setText("Generating...");
         ai.generateResponse(prompt, new AI.AIResponseCallback() {
             @Override
             public void onSuccess(String response) {
@@ -44,7 +51,6 @@ public class AI_Help extends AppCompatActivity {
             public void onFailure(@NonNull Throwable t) {
                 runOnUiThread(() -> resultText.setText(getString(R.string.error) + t.getMessage()));
             }
-        });});
-
+        });
     }
 }

@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
+    <!-- Background Image should be the first element to be in the back -->
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/app_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <!-- This FrameLayout is where the SettingsFragment will be displayed -->
     <FrameLayout
         android:id="@+id/settings"
@@ -29,6 +41,7 @@
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#3949AB"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

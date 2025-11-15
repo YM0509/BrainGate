@@ -47,7 +47,8 @@
             android:id="@+id/button_prev"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Prev" />
+            android:text="Prev"
+            android:backgroundTint="#3949AB"/>
 
         <Button
             android:id="@+id/button_play_pause"
@@ -55,13 +56,15 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Play" />
+            android:text="Play"
+            android:backgroundTint="#3949AB"/>
 
         <Button
             android:id="@+id/button_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Next" />
+            android:text="Next"
+            android:backgroundTint="#3949AB"/>
     </LinearLayout>
 
     <!-- Loading Indicator -->
