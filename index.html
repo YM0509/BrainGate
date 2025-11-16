@@ -24,17 +24,13 @@
     }
 
     .logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 14px;
-    background: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    color: #666;
+    width: 128px;      /* adjust this */
+    height: 128px;     /* adjust this */
+    object-fit: contain;
+    display: block;
     margin: 0 auto 1.5rem auto;
-    user-select: none;
+}
+
 }
 
 
@@ -96,9 +92,7 @@
 
 <div class="container">
 
-
-
-    <div class="logo"><img src="app\src\main\ic_launcher-playstore.png"></div>
+    <img class="logo" src="app\src\main\ic_launcher-playstore.png" alt="App Logo">
     <h1>BrainGate</h1>
     <p>Download from here..</p>
 
