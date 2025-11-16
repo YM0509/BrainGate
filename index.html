@@ -1,73 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My App</title>
-  <style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BrainGate</title>
+
+<style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f9;
-      color: #333;
-      text-align: center;
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background: #fafafa;
+        color: #222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        padding: 20px;
     }
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 40px 20px;
+
+    .container {
+        text-align: center;
+        max-width: 500px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
+
+    .logo {
+        width: 120px;
+        height: 120px;
+        border-radius: 20px;
+        background: #ddd; /* Placeholder background */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: #666;
+        margin: 0 auto 1.5rem auto;
+        user-select: none;
     }
-    .buttons {
-      margin: 30px 0;
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0.6rem;
+        font-weight: 600;
     }
-    .btn {
-      display: inline-block;
-      padding: 15px 25px;
-      margin: 10px;
-      font-size: 1.2em;
-      color: white;
-      background: #4CAF50;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s;
+
+    p {
+        font-size: 1.05rem;
+        color: #555;
+        margin-bottom: 2rem;
     }
-    .btn:hover {
-      background: #45a049;
+
+    .download-btn {
+        display: inline-block;
+        background: #111;
+        color: #fff;
+        padding: 14px 32px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: background 0.2s ease;
+        margin-bottom: 2rem;
     }
-    .screenshots {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 40px 0;
+
+    .download-btn:hover {
+        background: #000;
     }
-    .screenshots img {
-      width: 250px;
-      margin: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+    .dev-section {
+        margin-top: 1.5rem;
+        font-size: 0.95rem;
+        color: #555;
     }
+
+    .dev-title {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+
+    .dev-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: 1.6;
+    }
+
     footer {
-      background: #333;
-      color: white;
-      padding: 20px;
-      margin-top: 40px;
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        color: #888;
     }
-  </style>
+</style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to BrainGate</h1>
-    <p>Turning distractions into determination</p>
-  </header>
 
-  <div class="buttons">
-    <a href="app-debug.apk" class="btn">Download for Android</a>
-  </div>
-</body>
+<div class="container">
+
+<img src="app\src\main\ic_launcher-playstore.png"> 
+    <div class="logo">Logo</div>
+
+    <h1>BrainGate/h1>
+    <p>Download from here..</p>
+
+    <!-- Update the href to your actual APK file -->
+    <a class="download-btn" href="app-debug.apk" download>
+        Download APK
+    </a>
+
+    <div class="dev-section">
+        <div class="dev-title">Developers</div>
+        <ul class="dev-list">
+            <li>Yathartha Malaviya</li>
+            <li>Vyom Raj  Sharma</li>
+            <li>Anjas N. Kumar</li>
+        </ul>
+    </div>
+</div></body>
 </html>
